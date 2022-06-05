@@ -23,14 +23,14 @@ if ($_POST){
     $row = $connection->prepare($delete);
     $row->execute($response);
     
-        $response['status']='failed';
-        $response['message']='Gagal Delete Data';
-        
+        $response['status']='succcess';
+        $response['message']='Berhasil Delete Data';
 
      }
      else {
-        $response['status']='succcess';
-        $response['message']='Berhasil Delete Data';
+        $response['status']='failed';
+        $response['message']='Gagal Delete Data';
+        
      }
      $json = json_encode($response,JSON_PRETTY_PRINT);
      echo ($json);

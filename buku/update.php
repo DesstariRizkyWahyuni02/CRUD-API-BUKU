@@ -11,7 +11,7 @@ if ($_POST){
     $abstrak = $_POST['abstrak'];
     $isbn = $_POST['isbn'];
    
- 
+   
     $response[] = $judul;
     $response[] = $pengarang;
     $response[] = $jumlah;
@@ -23,15 +23,15 @@ if ($_POST){
     
     $row = $connection->prepare($update);
     $row->execute($response);
-
-        $response['status']='failed';
-        $response['message']='Gagal Update Data';
+         $response['status']='succcess';
+        $response['message']='Berhasil Update Data';
+        
         
 
      }
      else {
-        $response['status']='succcess';
-        $response['message']='Berhasil Update Data';
+        $response['status']='failed';
+        $response['message']='Gagal Update Data';
      }
      $json = json_encode($response,JSON_PRETTY_PRINT);
      echo ($json);

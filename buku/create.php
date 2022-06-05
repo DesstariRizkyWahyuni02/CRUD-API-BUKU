@@ -21,13 +21,13 @@ $insert = "INSERT INTO buku(isbn,judul,pengarang,jumlah,tanggal,abstrak) VALUES 
 $row = $connection->prepare($insert);
 
 $row->execute($response);
-$response['status']='failed';
-$response['message']='Gagal Insert data';
-
-}
-else {
 $response['status']='succcess';
 $response['message']='Berhasil Insert data';
+}
+else {
+$response['status']='failed';
+$response['message']='Gagal Insert data';    
+
 }
 $json = json_encode($response,JSON_PRETTY_PRINT);
 echo ($json);
